@@ -1,0 +1,60 @@
+<html>
+    <style>
+        h1{font-family: "Verdana", Geneva, sans-serif;}
+        p{font-family: "Verdana", Geneva, sans-serif; font-size: 16;}
+        p.psub1 {font-family: "Verdana", Geneva, sans-serif; font-size: 12; text-indent: 50px;}
+         p.psub2 {font-family: "Verdana", Geneva, sans-serif; font-size: 12; text-indent: 100px;}
+    </style>
+    <h1 align="center"> Welcome {{ username }}</h1>
+<body>
+<p ><b>Choose a Dataset to search within and a gene to search for: </b></p>
+<form action = "/result" method = "POST">
+    <p ><input type="radio" name="Sample" value="A" >Vasculature (meninges/brain, old/young) <br></p>
+    <p ><input type="radio" name="Sample" value="B"> gd T Cells (spleen/meninges, adult/pup) <br></p>
+    <p ><input type="radio" name="Sample" value="C"> ab T cells (old and young)<br></p>
+    <p ><input type="radio" name="Sample" value="D"> ab T cells (blood, diaphragm, and meninges)<br></p>
+    <p ><input type="radio" name="Sample" value="E"> Meningeal Myeloid Cells (WT/5xfad/5xfad ablated)<br></p>
+    <p ><input type="radio" name="Sample" value="F"> Brain Myeloid Cells (WT/5xfad/5xfad ablated)<br></p>
+    <p ><input type="radio" name="Sample" value="H"> Retrosplenial Cortex- Neuronal Nuclei- GABAergic subset (engram/nonengram, wt/scid)<br></p>
+    <p ><input type="radio" name="Sample" value="I"> Retrosplenial Cortex- Neuronal Nuclei- Glutamatergic subset (engram/nonengram, wt/scid)<br></p>
+
+    
+    
+    <p ><b>Genes </b>
+    <p > Enter as many genes as you wish separated by commas </p>
+    <p ><input placeholder = "eg. Hexb, Ifnar1, Cd4", type = "text" name = "Genes" /></p>
+    
+ <!---    <p ><b> Plot Type</b></p>
+    <p ><input type="radio" name="Plot" value="violin"> Violin Plot<br></p>
+    
+    
+    <p><input type="radio" name="Plot" value="tsne"> Feature (tSNE) Plot<br></p>   
+    <p><input type="radio" name="Plot" value="swarmplot"> Swarm Plot (similar to violin) <br></p>   
+    <p ><b>If you chose violin or swarm plot: choose an option to group your plot by: </b></p>
+        <p class= "psub1" ><input type = "checkbox" name = "groupby" value = "sample">sample<br></p>
+        <p class= "psub1"><input type = "checkbox" name = "groupby" value = "cluster">cluster<br></p>
+    
+    <p ><b> If you chose swarm plot: choose an option to color your plot by: </b></p>
+        <p class = "psub1"><input type = "checkbox" name = "colorby" value = "sample">sample<br></p>
+        <p class = "psub1"><input type = "checkbox" name = "colorby" value = "cluster">cluster<br></p>
+    <p> Do you want a dotplot of showing the expression of each of these genes in each cluster/sample? </p>
+    <p><input type="radio" name="DoPlot" value="yes"> yes <br></p>
+    <p><input type="radio" name="DoPlot" value="no"> no first take me to the violin and feature plot page <br></p>
+    
+    <p> Grouped by: </p>
+        <p><input type="radio" name="Group" value="sample"> sample <br></p>
+        <p><input type="radio" name="Group" value="cluster"> cluster <br></p> --->
+
+ <!--- option to see the most highly expressed genes --->	 
+     <p><input type = "checkbox" name = "highexp" value = "highexpcheck">  Show me the top <input placeholder = 20 type = "text" name = "expnumber" /> highly expressed genes in this dataset <br> </p>
+	 
+<!--- option to see the most variable genes ---> 
+     <p><input type = "checkbox" name = "highvar" value = "highvarcheck">  Show me the top <input placeholder = 20 type = "text" name = "varnumber" /> most highly variable genes in this dataset <br> </p>
+	 
+	 
+     <p><input type = "submit" value = "submit" /></p>
+
+	 
+</form>
+</body>
+</html>

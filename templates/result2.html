@@ -1,0 +1,23 @@
+<html> 
+    <style>
+        h1{font-family: "Verdana", Geneva, sans-serif;}
+        p {font-family: "Verdana", Geneva, sans-serif;}
+    </style>
+    <h1> Results </h1>
+    <body>
+    <form action = "/getplot" method = "POST">
+    <p><b> Gene </b></p>  
+    <ul>
+    <!--{% for gname in genelist %}
+   <p><input type="radio" name="gene" value="{{ gname }}" > {{ gname }}<br></p> 
+    {% endfor %}-->
+        <p><input type="radio" name="gene" value="{{ gene }}" > {{ gene }}<br></p>
+    </ul>
+    <p><b> Plot Type</b></p>
+    <p><input type="radio" name="plottype" value="violin"> Violin Plot<br></p>
+    <p><input type="radio" name="plottype" value="tsne"> Feature (tSNE) Plot<br></p>   
+
+    <p><input type = "submit" value = "submit" /></p>
+    </form>
+   </body>
+</html>
