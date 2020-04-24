@@ -16,7 +16,7 @@ Created on Mon Jun  3 09:42:12 2019
 
 # have to run this from within the venv environment
 # activate this environment with . venv/bin/activate in 
-# the /Users/morgan/myproject folder
+# 
 from flask import Flask
 from flask_heroku import Heroku
 from flask import render_template
@@ -46,19 +46,13 @@ import base64
 app = Flask(__name__)
 
 # configuration
-app.config['BASIC_AUTH_USERNAME'] = 'kipnis'
-app.config['BASIC_AUTH_PASSWORD'] = 'kip2019lab$$'
-app.config['BASIC_AUTH_FORCE'] = True
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
-#app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['HEROKU_POSTGRESQL_GOLD_URL']
-#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://localhost/pre-registration'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # random stuff
 db = SQLAlchemy(app)
 heroku = Heroku(app)
 #cache = SimpleCache()
-#app.secret_key = 'coffee'
 #images = Images(app)
 cache = Cache()
 cache_servers = os.environ.get('MEMCACHIER_SERVERS')
@@ -88,10 +82,6 @@ else:
                 'retry_timeout': 2,
                 'dead_timeout': 30}}})
 
-# some security
-basic_auth = BasicAuth(app)
-myhash1 = pbkdf2_sha256.hash("kip2019lab$$")
-myhash2 = pbkdf2_sha256.hash('kipnis')
 
 # set up the database class
 class Data(db.Model):
