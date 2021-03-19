@@ -40,7 +40,7 @@ parsedatetime==2.4
 passlib==1.7.1
 peewee==3.9.5
 PIL==1.1.7
-Pillow==6.2.2
+Pillow==8.1.1
 pillowcase==2.0.0
 prettyplotlib==0.1.7
 psycopg2==2.8.2
