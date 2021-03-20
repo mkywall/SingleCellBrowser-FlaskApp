@@ -26,7 +26,7 @@ gunicorn==19.9.0
 isodate==0.6.0
 itsdangerous==1.1.0
 jdcal==1.4.1
-Jinja2==2.10.1
+Jinja2==2.11.3
 jmespath==0.9.4
 kiwisolver==1.1.0
 leather==0.3.3
